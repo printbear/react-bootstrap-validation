@@ -8,7 +8,7 @@ var buffer      = require('vinyl-buffer');
 var rename      = require('gulp-rename');
 var sourcemaps  = require('gulp-sourcemaps');
 
-var dest   = "./dist";
+var dest   = "./";
 var lib    = "./lib";
 var src    = './src';
 var entry  = src + '/index.js';
@@ -71,7 +71,7 @@ gulp.task('minimize', ['pack'], function () {
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(gulp.dest(dest))
         .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({ basename: 'index', suffix: '.min' }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(dest));
 });
