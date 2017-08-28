@@ -2,7 +2,7 @@
   "name": "react-bootstrap-validation",
   "version": "0.2.0",
   "description": "Form validation for react-bootstrap",
-  "main": "./index.min.js",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/nexwaygroup/react-bootstrap-validation.git"

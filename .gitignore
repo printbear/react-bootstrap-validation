@@ -6,4 +6,3 @@ node_modules
 .babel-cache/
 .coverage/
 dist/
-lib/
