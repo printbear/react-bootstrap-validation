@@ -1,11 +1,11 @@
 import React from 'react';
-import { FormControl } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 export default class ValidatedInput extends React.Component {
     constructor(props) {
         super(props);
 
-        const {validationEvent, validate, errorHelp, _registerInput, _unregisterInput, ...inputProps} = props;
+        const {validationEvent, validate, errorHelp, _registerInput, _unregisterInput, label, ...inputProps} = props;
         this._registerInput = _registerInput;
         this._unregisterInput = _unregisterInput;
         this.inputProps = inputProps;
@@ -23,7 +23,12 @@ export default class ValidatedInput extends React.Component {
     }
 
     render() {
-        return <FormControl ref='control' {...this.inputProps}>{this.props.children}</FormControl>;
+        return (
+            <FormGroup>
+                {this.props.label ? <ControlLabel>{this.props.label}</ControlLabel> : null}
+                <FormControl ref='control' {...this.inputProps}>{this.props.children}</FormControl>
+            </FormGroup>
+        );
     }
 }
 
