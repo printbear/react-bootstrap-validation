@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 export default class ValidatedInput extends React.Component {
@@ -33,17 +34,17 @@ export default class ValidatedInput extends React.Component {
 }
 
 ValidatedInput.propTypes = {
-    name           : React.PropTypes.string.isRequired,
-    validationEvent: React.PropTypes.oneOf([
+    name           : PropTypes.string.isRequired,
+    validationEvent: PropTypes.oneOf([
         '', 'onChange', 'onBlur', 'onFocus'
     ]),
-    validate       : React.PropTypes.oneOfType([
-        React.PropTypes.func,
-        React.PropTypes.string
+    validate       : PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.string
     ]),
-    errorHelp      : React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.object
+    errorHelp      : PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object
     ])
 };
 

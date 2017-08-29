@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ValidatedInput from './ValidatedInput';
 
 export default class Radio extends ValidatedInput {
@@ -8,5 +9,5 @@ export default class Radio extends ValidatedInput {
 }
 
 Radio.propTypes = Object.assign({}, ValidatedInput.propTypes, {
-    name: React.PropTypes.string
+    name: PropTypes.string
 });
