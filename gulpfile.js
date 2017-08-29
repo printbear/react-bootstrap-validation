@@ -40,11 +40,21 @@ var config = {
                     commonjs: 'react-bootstrap',
                     amd: 'react-bootstrap'
                 }
-            }
+            },
+            {
+                'prop-types': {
+                    root: 'PropTypes',
+                    commonjs2: 'prop-types',
+                    commonjs: 'prop-types',
+                    amd: 'prop-types'
+                }
+            },
+
         ],
         devtool: 'source-map'
     },
     babel: {
+        plugins: ["transform-object-assign"]
     }
 };
 
