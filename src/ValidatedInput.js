@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 
 export default class ValidatedInput extends React.Component {
     constructor(props) {
@@ -30,9 +30,12 @@ export default class ValidatedInput extends React.Component {
     render() {
 
         return (
-            <FormGroup>
+            <FormGroup validationState={this.props.help ? 'error' : null}>
                 {this.props.label ? <ControlLabel>{this.props.label}</ControlLabel> : null}
                 <FormControl ref='control' {...this.inputProps()}>{this.props.children}</FormControl>
+                {this.props.help
+                    ? <HelpBlock>{this.props.help}</HelpBlock>
+                    : null }
             </FormGroup>
         );
     }
