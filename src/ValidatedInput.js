@@ -6,13 +6,17 @@ export default class ValidatedInput extends React.Component {
     constructor(props) {
         super(props);
 
-        const {validationEvent, validate, errorHelp, _registerInput, _unregisterInput, label, ...inputProps} = props;
+        const {_registerInput, _unregisterInput} = props;
         this._registerInput = _registerInput;
         this._unregisterInput = _unregisterInput;
-        this.inputProps = inputProps;
         if (!this._registerInput || !this._unregisterInput) {
             throw new Error('Input must be placed inside the Form component');
         }
+    }
+
+    inputProps() {
+        const {validationEvent, validate, errorHelp, _registerInput, _unregisterInput, label, ...inputProps} = props;
+        return inputProps;
     }
 
     componentWillMount() {
@@ -24,10 +28,11 @@ export default class ValidatedInput extends React.Component {
     }
 
     render() {
+
         return (
             <FormGroup>
                 {this.props.label ? <ControlLabel>{this.props.label}</ControlLabel> : null}
-                <FormControl ref='control' {...this.inputProps}>{this.props.children}</FormControl>
+                <FormControl ref='control' {...this.inputProps()}>{this.props.children}</FormControl>
             </FormGroup>
         );
     }
