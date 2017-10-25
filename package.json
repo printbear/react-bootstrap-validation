@@ -71,7 +71,7 @@
     "classnames": "^2.0.0",
     "gulp-babel": "^6.1.2",
     "react-addons-create-fragment": "^15.2.0",
-    "react-bootstrap": ">=0.23.0",
+    "react-bootstrap": ""^0.31.5"",
     "validator": "^3.41.3"
   }
 }
